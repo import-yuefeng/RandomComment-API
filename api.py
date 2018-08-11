@@ -1,7 +1,7 @@
 import copy
 import redis
 from flask import Flask,Response,jsonify
-
+import json
 # encoding:utf-8
 import io  
 import sys  
@@ -20,9 +20,12 @@ returnModule  = {"comment":"",
 redis_cli        = redis.Redis(host="127.0.0.1", port=6379, decode_responses=True, db=2)  
 redis_cli_simple = redis.Redis(host="127.0.0.1", port=6379, decode_responses=True, db=1)  
 
+count = 0
+
 @app.route('/get_comment')
 def get_comment():
-
+        global count
+        count += 1
         re_dict       = copy.deepcopy(returnModule)
         randomKey     = redis_cli.randomkey()
         randomCommentList = redis_cli.get(randomKey).split("|")
@@ -37,7 +40,10 @@ def get_comment():
         print(re_dict)
         return response
 
+@app.route("/count")
+def count_num():
+    return "请求数" + str(count)   
 
 if __name__ == "__main__":
 
-        app.run(host="127.0.0.1", port=8888, debug = True)
+        app.run(host="0.0.0.0", port=80, debug = True)
