@@ -5,7 +5,7 @@
 计划开发返回png/svg格式的数据
 目前支持网易音乐4.5万热门评论
 计划支持[Listen-now](https://github.com/listen-now/listen-now)所支持的六大平台的热门评论
-
+![Listen-now](test.jpg)
 ### 简介
 
 RandomComment-API 是一个可以随机返回各大平台热门评论的接口。具有以下特点：
@@ -32,9 +32,9 @@ RandomComment-API 是一个可以随机返回各大平台热门评论的接口�
 
 #### API举例
 
-* [http://zlc666.xyz/get_comment](http://zlc666.xyz/get_comment)
+* [www.zlc666.xyz/get_comment](http://www.zlc666.xyz/get_comment)
 
-* [API点击数统计](http://zlc666.xyz/count)
+* [API点击数统计](http://www.zlc666.xyz/count)
 
 #### API地址格式
 
